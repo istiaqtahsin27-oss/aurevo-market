@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aurevo Market starter online shop with curated products, category filters, shopping cart, and WhatsApp ordering."
+    />
+    <title>Aurevo Market</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">A</div>
+        <div>
+          <p class="eyebrow">Premium lifestyle</p>
+          <h1 id="shopName">Aurevo Market</h1>
+        </div>
+      </div>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search products" />
+        </div>
+        <button id="adminBtn" class="secondary-btn">Admin</button>
+      </div>
+    </header>
+
+    <div class="nav-row">
+      <div id="categoryNav" class="category-nav" aria-label="Product categories"></div>
+    </div>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="tag">Smart essentials</p>
+          <h2>Upgrade your daily routine.</h2>
+          <p>
+            Discover everyday essentials, beauty picks, accessories, and lifestyle
+            upgrades designed for convenience and comfort.
+          </p>
+          <div class="hero-actions">
+            <a href="#catalog" class="primary-btn">Shop now</a>
+            <button class="ghost-btn" id="featuredBtn">Popular picks</button>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <p class="mini-label">This week</p>
+          <h3>Trending offers</h3>
+          <ul>
+            <li><span>Free shipping</span> <strong>From ৳699</strong></li>
+            <li><span>New arrivals</span> <strong>12+ Fresh items</strong></li>
+            <li><span>Support</span> <strong>WhatsApp orders</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="catalog" class="catalog-wrap">
+        <div class="catalog-header">
+          <div>
+            <p class="eyebrow">Storefront</p>
+            <h3>Featured products</h3>
+          </div>
+          <div class="results-chip"><span id="productCount">0</span> items</div>
+        </div>
+
+        <div id="productGrid" class="product-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <aside class="cart-panel">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">Your order</p>
+          <h3>Shopping cart</h3>
+        </div>
+        <span id="cartBadge" class="cart-badge">0</span>
+      </div>
+
+      <div id="cartItems" class="cart-items"></div>
+
+      <div class="totals">
+        <div class="line"><span>Subtotal</span><strong id="subtotalValue">৳0</strong></div>
+        <div class="line"><span>Delivery</span><strong id="shippingValue">৳0</strong></div>
+        <div class="line total-row"><span>Total</span><strong id="totalValue">৳0</strong></div>
+      </div>
+
+      <button id="checkoutBtn" class="checkout-btn">Checkout on WhatsApp</button>
+    </aside>
+
+    <div id="adminModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Control center</p>
+            <h3 id="adminTitle">Shop settings</h3>
+          </div>
+          <button class="icon-btn" data-close="true" aria-label="Close admin panel">×</button>
+        </div>
+
+        <form id="shopSettingsForm" class="stack-form">
+          <div class="field-grid">
+            <label>
+              Shop name
+              <input type="text" id="shopNameInput" name="shopName" required />
+            </label>
+            <label>
+              Phone
+              <input type="tel" id="phoneInput" name="phone" required />
+            </label>
+            <label>
+              Email
+              <input type="email" id="emailInput" name="email" required />
+            </label>
+            <label>
+              WhatsApp number
+              <input type="tel" id="whatsappInput" name="whatsapp" placeholder="8801XXXXXXXXX" required />
+            </label>
+          </div>
+
+          <label>
+            Address
+            <textarea id="addressInput" name="address" rows="3" required></textarea>
+          </label>
+
+          <button type="submit" class="primary-btn full-width">Save settings</button>
+        </form>
+
+        <div class="divider"></div>
+
+        <form id="productForm" class="stack-form">
+          <h4>Add demo product</h4>
+
+          <div class="field-grid">
+            <label>
+              Product name
+              <input type="text" id="productNameInput" name="productName" required />
+            </label>
+            <label>
+              Category
+              <input type="text" id="productCategoryInput" name="category" placeholder="Accessories" required />
+            </label>
+            <label>
+              Price (৳)
+              <input type="number" id="productPriceInput" name="price" min="1" required />
+            </label>
+            <label>
+              Image URL
+              <input type="url" id="productImageInput" name="image" placeholder="https://..." required />
+            </label>
+          </div>
+
+          <label>
+            Description
+            <textarea id="productDescriptionInput" name="description" rows="3" required></textarea>
+          </label>
+
+          <button type="submit" class="secondary-btn full-width">Add product</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
